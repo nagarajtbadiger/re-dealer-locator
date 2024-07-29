@@ -1,0 +1,23 @@
+// app/page.tsx
+import React, { useState, useEffect } from "react";
+import Dealers from "@/components/Dealers";
+import GoogleMaps from "@/components/GoogleMaps";
+
+async function fetchData() {
+  const url = "http://iabeta.in/abhishek/api/re.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+export default async function Home() {
+  const data = await fetchData();
+
+  return (
+    <div>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+}
