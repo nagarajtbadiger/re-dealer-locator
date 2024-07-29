@@ -41,7 +41,7 @@ const GoogleMaps: React.FC<GoogleMapsProps> = ({
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/dealers.json"); // Adjust path if needed
+        const response = await fetch("http://iabeta.in/abhishek/api/re.json"); // Adjust path if needed
         const data = await response.json();
 
         // Check if cityStateMap exists and has the selectedState and selectedCity
