@@ -13,6 +13,7 @@ const containerStyle = {
 };
 
 interface MarkerData {
+  address: string;
   id: string;
   lat: number;
   lng: number;
@@ -50,6 +51,7 @@ const GoogleMaps: React.FC<GoogleMapsProps> = ({
         if (Array.isArray(cityData)) {
           const markerData = cityData.map((dealer: any) => ({
             id: dealer.dealerId,
+            address: dealer.address,
             lat: parseFloat(dealer.latitude),
             lng: parseFloat(dealer.longitude),
             title: dealer.name,
@@ -115,9 +117,11 @@ const GoogleMaps: React.FC<GoogleMapsProps> = ({
             position={{ lat: selectedMarker.lat, lng: selectedMarker.lng }}
             onCloseClick={() => setSelectedMarker(null)}
           >
-            <div className="custom-info-window">
-              <h4>{selectedMarker.title}</h4>
-              <p>Details about {selectedMarker.title}</p>
+            <div className="custom-info-window lg:max-w-[250px]">
+              <h2 className="text-[16px] font-bold mb-1">
+                {selectedMarker.title}
+              </h2>
+              <p>{selectedMarker.address}</p>
             </div>
           </InfoWindow>
         )}
