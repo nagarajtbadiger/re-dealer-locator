@@ -16,7 +16,7 @@ const StateCitySelector: React.FC<StateCitySelectorProps> = ({ onSelect }) => {
   useEffect(() => {
     const fetchCityData = async () => {
       try {
-        const response = await fetch("http://iabeta.in/abhishek/api/re.json"); // Fetch JSON data (adjust path as needed)
+        const response = await fetch("/dealers.json"); // Fetch JSON data (adjust path as needed)
         const data = await response.json(); // Parse JSON response
         setCityData(data.cityStateMap); // Update cityData state with fetched data
 

@@ -21,7 +21,7 @@ const Home = () => {
   useEffect(() => {
     if (selectedCity) {
       // Fetch data from the JSON file
-      fetch("http://iabeta.in/abhishek/api/re.json")
+      fetch("/dealers.json")
         .then((response) => response.json())
         .then((data) => {
           // Filter data based on selected city

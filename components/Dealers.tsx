@@ -29,7 +29,7 @@ const Dealers: React.FC<DealerProps> = ({ selectedState, selectedCity }) => {
   useEffect(() => {
     const fetchDealerData = async () => {
       try {
-        const response = await fetch("http://iabeta.in/abhishek/api/re.json"); // Adjust path as needed
+        const response = await fetch("/dealers.json"); // Adjust path as needed
         const data = await response.json(); // Parse JSON response
 
         // Extract dealers from JSON structure
